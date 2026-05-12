@@ -35,4 +35,22 @@ public class AnalisadorTexto {
         }
         return contador;
     }
+
+    static int contarConsoantes(String texto) {
+        int contador = 0;
+        char[] letras = texto.toLowerCase().toCharArray();
+
+        for (int i = 0; i < letras.length; i++) {
+            char c = letras[i];
+            boolean ehLetra = (c >= 'a' && c <= 'z');
+            boolean ehVogal = (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+
+            if (ehLetra && !ehVogal) {
+                contador++;
+            }
+        }
+        return contador;
+    }
 }
+
+
